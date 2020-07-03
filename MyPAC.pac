@@ -1,8 +1,9 @@
+var proxy = "PROXY 192.168.31.155:8787; DIRECT";
+
 function FindProxyForURL(url, host)
 {
     url  = url.toLowerCase();
     host = host.toLowerCase();
-    proxy = "PROXY 192.168.31.155:8787; DIRECT";
 
     if (shExpMatch(url,"*twitter*")  ||
         shExpMatch(url,"*facebook*") ||
@@ -12,7 +13,8 @@ function FindProxyForURL(url, host)
 		};
 	
     if (shExpMatch(url,"*youtube*") ||
-        shExpMatch(url,"*google*")){
+        shExpMatch(url,"*google*") ||
+        shExpMatch(url,"*stack")){
 	        return proxy;
 		};
 		
